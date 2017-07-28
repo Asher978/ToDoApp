@@ -22,6 +22,8 @@ app.listen(port, () => {
     console.log(`Surviving on port ${port}`);
 })
 
+const todoRoutes = require('./routes/todo-routes')
+app.use('/todo', todoRoutes);
 
 
 app.get('*', (req, res) => {
