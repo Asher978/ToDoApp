@@ -22,6 +22,12 @@ app.listen(port, () => {
     console.log(`Surviving on port ${port}`);
 })
 
+app.get('/', (req, res) => {
+    res.render('index', {
+        message: 'Welcome to TODO APP!'
+    });
+});
+
 const todoRoutes = require('./routes/todo-routes')
 app.use('/todo', todoRoutes);
 
