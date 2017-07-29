@@ -1,16 +1,21 @@
 <% include ../partials/boilerplate %>
 
 <div class="container">
-<% for (let todo of data) { %>
     <a href="/todo/add">Add a new task</a>
-    <a href="/todo/<%=todo.id%>/edit">Update task</a>
-    <h1><%= todo.title %></h1>
-    <h3><%= todo.status %></h3>
-    <h2><%= todo.category %></h2>
-    <p><%= todo.description %></p>
-    <form method="POST" action="/todo/<%= data.id %>?_method=DELETE">
-        <input type='submit' value='DELETE it!!' />
-    </form>
+<% for (let todo of data) { %>
+    <div class="taskContainer">
+        <h1><%= todo.title %></h1>
+        <h3><%= todo.status %></h3>
+        <h2><%= todo.category %></h2>
+        <form method="POST" action="/todo/<%= todo.id %>?_method=DELETE">
+            <input type='submit' value='Del this task' />
+        </form>
+        <a class="details" href='/todo/<%= todo.id%>'>Info</a>
+        <a href="/todo/<%=todo.id%>/edit">Update task</a>
+        <form method="POST" action="/todo/<%= todo.id %>?_method=DELETE">
+            <input type='submit' value='DELETE it!!' />
+        </form>
+    </div>
 <% } %>
 </div>
 

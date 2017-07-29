@@ -79,3 +79,8 @@ footer {
     margin: 2%;
     text-decoration: none;
 }
+
+/* TODO page styling */
+.taskContainer {
+    border: 1px solid black;
+}
