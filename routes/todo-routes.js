@@ -5,6 +5,8 @@ const todoController = require('../controllers/todo-controller');
 
 todoRoutes.get('/', todoController.index);
 
+todoRoutes.get('/:id', todoController.show);
+
 
 
 module.exports = todoRoutes;
