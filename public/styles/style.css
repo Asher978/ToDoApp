@@ -1,0 +1,81 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+} 
+
+.navbar {
+    background-color: rgba(0,0,0,0.7);
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navlogo {
+    position: relative;     
+    height: 55px;
+    width: 300px; 
+    margin-right: 20%;
+}
+
+.navbuttons {
+    color: white;
+    font-size: 1.8em;
+    border-right: 3px solid white;
+    border-left: 0px;
+    padding: .7% 5% .7% 5%;
+}
+
+.navbuttons:hover {
+    color: black;
+    background-color: white;
+    border-bottom: 3px solid white;
+    transition: linear .2s;
+}
+
+footer {
+   /* background-color: rgba(0,0,0,0.7); */
+   bottom: 0px;
+   height: 50px;
+   display: flex; 
+   align-items: center;
+   position: relative;
+   left: 10%;
+}
+
+.container {
+    /* border: 1px solid blue; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* background-color: rgba(0,0,0,0.06);   */
+    /* align-items: center; */
+    /* width: 70vw; */
+    
+    /* position: relative; */
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70vw;
+    height: 80vh;
+    overflow: scroll;
+    background-color: rgba(0,0,0,0.09);  
+    /* border: 1px solid grey; */
+    margin: 20 auto;
+    border-radius: 10px; 
+} 
+
+.container h1 {
+    font-size: 3em;
+}
+
+.container a {
+    font-size: 1.5em;
+    background-color: rgba(0,0,0,0.08);
+}
+
+.child {
+    display: flex;
+    margin: 2%;
+    text-decoration: none;
+}

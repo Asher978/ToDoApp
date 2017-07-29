@@ -1,3 +1,4 @@
+<% include ../partials/boilerplate %>
 
 
 <form method='POST' action='/todo/<%= data.id %>?_method=PUT'>
@@ -7,3 +8,5 @@
   <input name='description' type='text' value='<%= data.description%>'>
   <input type='submit' value='Edit it!!' />
 </form>
+
+<% include ../partials/end %>

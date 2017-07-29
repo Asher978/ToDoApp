@@ -1,3 +1,15 @@
-<h1 style="color: blue; text-align: center"><%= message %></h1>
-<a href="/todo">Click to check your TODO list!</a>
-<a href="/todo/add">Add a new task</a>
+<% include ./partials/boilerplate %>
+<div class="navbar">
+    <img class="navlogo" src="./images/mainLogo.png" alt="">
+    <a class="navbuttons" href="">Home</a>
+    <a class="navbuttons" href="">About</a>
+    <a class="navbuttons" href="">Todo</a>
+</div>
+<div class="container">
+    <h1 class="child"><%= message %></h1>
+    <a class="child" href="/todo">Click to check your TODO list!</a>
+    <a class="child" href="/todo/add">Add a new task</a>
+</div>
+<footer>Copy right Asher S</footer>
+
+<% include ./partials/end %>
