@@ -70,6 +70,16 @@ todoController.edit = (req, res) => {
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
+    })
+}
+
+todoController.delete = (req, res) => {
+    Todo.destroy(req.params.id)
+    .then(() => {
+        res.redirect('/todo');
+    }).catch(err => {
+        console.log(err);
+        res.status(500).josn(err);
     });
 }
 

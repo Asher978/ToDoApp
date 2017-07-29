@@ -38,4 +38,11 @@ Todo.update = (todo, id) => {
     `, [todo.title, todo.status, todo.category, todo.description, id]);
 }
 
+Todo.destroy = (id) => {
+    return db.none(`
+        DELETE FROM todo
+        WHERE id = $1
+    `, [id]);
+}
+
 module.exports = Todo;

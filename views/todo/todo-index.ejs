@@ -8,5 +8,8 @@
     <h3><%= todo.status %></h3>
     <h2><%= todo.category %></h2>
     <p><%= todo.description %></p>
+    <form method="POST" action="/todo/<%= todo.id %>?_method=DELETE">
+        <input type='submit' value='DELETE it!!' />
+    </form>
 <% } %>
 </div>
