@@ -45,5 +45,33 @@ todoController.create = (req, res) => {
     });
 };
 
+//update a TODO
+todoController.update = (req, res) => {
+    Todo.update({
+        title: req.body.title,
+        status: req.body.status,
+        category: req.body.category,
+        description: req.body.description,
+    }, req.params.id).then(todo => {
+        res.redirect(`/todo/${req.params.id}`);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+};
+
+todoController.edit = (req, res) => {
+    Todo.findById(req.params.id)
+    .then(todo => {
+        res.render('todo/todo-edit', {
+            currentPage: 'edit',
+            data: todo,
+        });
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+}
+
 
 module.exports = todoController;

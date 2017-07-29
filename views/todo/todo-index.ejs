@@ -3,6 +3,7 @@
 <div class="container">
 <% for (let todo of data) { %>
     <a href="/todo/add">Add a new task</a>
+    <a href="/todo/<%=todo.id%>/edit">Update task</a>
     <h1><%= todo.title %></h1>
     <h3><%= todo.status %></h3>
     <h2><%= todo.category %></h2>

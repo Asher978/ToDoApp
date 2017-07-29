@@ -11,6 +11,8 @@ todoRoutes.get('/add', (req, res) => {
 });
 
 todoRoutes.get('/:id', todoController.show);
+todoRoutes.get('/:id/edit', todoController.edit);
+todoRoutes.put('/:id', todoController.update);
 
 
 module.exports = todoRoutes;
