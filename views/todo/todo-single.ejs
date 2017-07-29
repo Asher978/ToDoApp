@@ -6,7 +6,7 @@
     <h3><%= data.category %></h3>
     <p><%= data.description %></p>
     <a href="/todo">TODO List</a>
-     <form method="POST" action="/todo/<%= todo.id %>?_method=DELETE">
+     <form method="POST" action="/todo/<%= data.id %>?_method=DELETE">
         <input type='submit' value='DELETE it!!' />
     </form>
 </div>
