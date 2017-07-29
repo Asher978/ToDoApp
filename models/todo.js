@@ -15,4 +15,14 @@ Todo.findById = (id) => {
     `, [id]);
 }
 
+//creating a new TODO
+Todo.create = (todo) => {
+    return db.one (`
+    INSERT INTO todo
+    (title, status, category, description)
+    VALUES ($1, $2, $3, $4)
+    RETURNING *
+    `, [todo.title, todo.status, todo.category, todo.description]);
+}
+
 module.exports = Todo;

@@ -30,5 +30,20 @@ todoController.show = (req, res) => {
     });
 };
 
+//new TODO
+todoController.create = (req, res) => {
+    Todo.create({
+        title: req.body.title,
+        status: req.body.status,
+        category: req.body.category,
+        description: req.body.description,
+    }).then(() => {
+        res.redirect('/todo');
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+};
+
 
 module.exports = todoController;
