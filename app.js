@@ -43,6 +43,11 @@ app.get('/', (req, res) => {
 const todoRoutes = require('./routes/todo-routes')
 app.use('/todo', todoRoutes);
 
+const authRoutes = require('./routes/auth-routes');
+app.use('/auth', authRoutes);
+const userRoutes = require('./routes/user-routes');
+app.use('/user', userRoutes);
+
 
 app.get('*', (req, res) => {
     res.status(404).send('404 Not Found :((')
