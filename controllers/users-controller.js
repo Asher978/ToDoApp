@@ -24,10 +24,17 @@ usersController.create = (req, res) => {
 }
 
 usersController.index = (req, res) => {
-  res.json({
+  User.findUserTodo(req.user.id) 
+  .then(todo => {
+    res.json({
     user: req.user,
-    data: 'Put a user profile on this route'
+    data: 'Put a user profile on this route',
+    todo: todo,
   });
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json({err: err});
+  })
 }
 
 module.exports = usersController;

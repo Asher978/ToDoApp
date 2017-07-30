@@ -37,7 +37,7 @@ todoController.create = (req, res) => {
         status: req.body.status,
         category: req.body.category,
         description: req.body.description,
-    }).then(() => {
+    }, req.user.id).then(() => {
         res.redirect('/todo');
     }).catch(err => {
         console.log(err);

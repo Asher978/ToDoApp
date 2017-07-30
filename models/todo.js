@@ -16,13 +16,13 @@ Todo.findById = (id) => {
 }
 
 //creating a new TODO
-Todo.create = (todo) => {
+Todo.create = (todo, userid) => {
     return db.one (`
         INSERT INTO todo
-        (title, status, category, description)
-        VALUES ($1, $2, $3, $4)
+        (title, status, category, description, user_id)
+        VALUES ($1, $2, $3, $4, $5)
         RETURNING *
-    `, [todo.title, todo.status, todo.category, todo.description]);
+    `, [todo.title, todo.status, todo.category, todo.description, userid]);
 }
 
 //update an existing TODO

@@ -17,7 +17,7 @@ passport.use(
           return done(null, false);
         }
         if (!authHelpers.comparePass(password, user.password_digest)) {
-          return done(null, false);
+          return done(null, true);
         } else {
           return done(null, user);
         }
