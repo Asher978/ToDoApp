@@ -1,20 +1,27 @@
 <% include ../partials/boilerplate %>
 
-<div class="container">
-    <a href="/todo/add">Add a new task</a>
+<div class="navbar">
+    <img class="navlogo" src="./images/mainLogo.png" alt="">
+    <a class="navbuttons" href="/">Home</a>
+    <a class="navbuttons" href="">About</a>
+    <a class="navbuttons" href="">Todo</a>
+</div>
+<div class="indexContainer">
+    <a class="newtask" href="/todo/add">Add a new task</a>
 <% for (let todo of data) { %>
     <div class="taskContainer">
-        <h1><%= todo.title %></h1>
-        <h3><%= todo.status %></h3>
-        <h2><%= todo.category %></h2>
-        <form method="POST" action="/todo/<%= todo.id %>?_method=DELETE">
-            <input type='submit' value='Del this task' />
-        </form>
-        <a class="details" href='/todo/<%= todo.id%>'>Info</a>
-        <a href="/todo/<%=todo.id%>/edit">Update task</a>
-        <form method="POST" action="/todo/<%= todo.id %>?_method=DELETE">
-            <input type='submit' value='DELETE it!!' />
-        </form>
+        <div class="one">
+            <h1 class="first"><%= todo.title %></h1> 
+            <h3 class="first"><%= todo.status %></h3>
+        </div>
+        <div class="two">
+            <h2 class=""><%= todo.category %></h2>
+            <a class="second" href='/todo/<%= todo.id%>'>Info</a>
+            <a class="second" href="/todo/<%=todo.id%>/edit">Edit</a>
+            <form class="second" method="POST" action="/todo/<%= todo.id %>?_method=DELETE">
+                <input type='submit' value='Delete' />
+            </form>   
+        </div>    
     </div>
 <% } %>
 </div>
