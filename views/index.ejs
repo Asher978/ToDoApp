@@ -1,14 +1,20 @@
 <% include ./partials/boilerplate %>
+
 <div class="navbar">
     <img class="navlogo" src="./images/mainLogo.png" alt="">
-    <a class="navbuttons" href="">Home</a>
-    <a class="navbuttons" href="auth/register">Register</a>
-    <a class="navbuttons" href="auth/login">Login</a>
+    <a class="navbuttons" href='/'>Home</a>
+    <a class="navbuttons" href='/auth/register'>Register</a>
+    <a class="navbuttons" href='/user'>Profile</a>
+    <a class="navbuttons" href='/auth/login'>Login</a>
+    <a class="navbuttons" href='/auth/logout'>Logout</a>
 </div>
-<div class="container">
-    <h1 class="child"><%= message %></h1>
-    <a class="child" href="/todo">Click to check your TODO list!</a>
-    <a class="child" href="/todo/add">Add a new task</a>
+
+<div class='container'>
+     <h1 class='child'><%= message %></h1> 
+    <p class='child'>First time user? REGISTER</p>
+    <p class='child'>Already a user? LOGIN</p>
+     <a class="child" href="/todo">Click to check your TODO list!</a> 
+     <a class="child" href="/todo/add">Add a new task</a> 
 </div>
 <footer>Copyrights Asher S</footer>
 

@@ -36,7 +36,8 @@ app.listen(port, () => {
 
 app.get('/', (req, res) => {
     res.render('index', {
-        message: 'Welcome to TODO APP!'
+        message: 'Welcome to TODO APP!',
+        currentPage: 'home',
     });
 });
 

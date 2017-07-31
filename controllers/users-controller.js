@@ -1,7 +1,23 @@
 const bcrypt = require('bcryptjs');
-const User = require('../models/user.js');
+const User = require('../models/user');
 
 const usersController = {};
+
+usersController.index = (req, res) => {
+  User.findUserTodo(req.user.id) 
+  .then(todo => {
+    res.redirect('/todo');
+    ({
+    user: req.user,
+    data: 'Put a user profile on this route',
+    todo: todo,
+  });
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json({err: err});
+  })
+}
+
 
 usersController.create = (req, res) => {
     const salt = bcrypt.genSaltSync();
@@ -23,18 +39,5 @@ usersController.create = (req, res) => {
   });
 }
 
-usersController.index = (req, res) => {
-  User.findUserTodo(req.user.id) 
-  .then(todo => {
-    res.json({
-    user: req.user,
-    data: 'Put a user profile on this route',
-    todo: todo,
-  });
-  }).catch(err => {
-    console.log(err);
-    res.status(500).json({err: err});
-  })
-}
 
 module.exports = usersController;
