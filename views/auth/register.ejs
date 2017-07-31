@@ -1,13 +1,20 @@
 <% include ../partials/boilerplate %>
 
-<div class='todo-container'>
+<div class="navbar">
+    <img class="navlogo" src="../images/mainLogo.png" alt="">
+    <a class="navbuttons" href="/">Home</a>
+    <a class="navbuttons" href="auth/register">Register</a>
+    <a class="navbuttons" href="auth/login">Login</a>
+</div>
+
+<div class="register">
   <form method='POST' action='/auth/register'>
-    <input name='username' type='text' placeholder='username' required />
-    <input name='email' type='email' placeholder='email' required />
-    <input name='password' type='password' placeholder='password' required />
-    <input name='firstname' type='text' placeholder='first name' required />
-    <input name='lastname' type='text' placeholder='last name' required />
-    <input type='submit' value='Register!' />
+    <input class="regChild" name='username' type='text' placeholder='Username' required />
+    <input class="regChild" name='email' type='email' placeholder='Email' required />
+    <input class="regChild" name='password' type='password' placeholder='Password' required />
+    <input class="regChild" name='firstname' type='text' placeholder='First Name' required />
+    <input class="regChild" name='lastname' type='text' placeholder='Last Name' required />
+    <input class="regChild regbutton" type='submit' value='Register' />
   </form>
 </div>
 
